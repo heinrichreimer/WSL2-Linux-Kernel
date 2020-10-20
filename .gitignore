@@ -87,6 +87,11 @@ modules.builtin
 !.clang-format
 
 #
+# Kernel config
+#
+!.config
+
+#
 # Generated include files
 #
 include/config
