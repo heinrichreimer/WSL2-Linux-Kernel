@@ -7,7 +7,7 @@ Modified for usage with Ceph, NFS 4.1.
 
 Open WSL2 and install dependencies:
 ```shell script
-sudo apt install flex bison libelf-dev libssl-dev
+sudo apt install flex bison libelf-dev libssl-dev crudini
 ```
 
 Prepare scripts:
@@ -38,7 +38,7 @@ cp arch/x86/boot/bzImage /mnt/c/Sdk/Wsl/kernel
 
 Configure Windows to use the custom kernel:
 ```shell script
-sed -i 's/^\s*kernel=/#\0/;$akernel=/mnt/c/Sdk/Wsl/kernel' "$(wslpath "$(wslvar USERPROFILE)")/.wslconfig"
+crudini --set "$(wslpath "$(wslvar USERPROFILE)")/.wslconfig" wsl2 kernel "$(wslpath -w "/mnt/c/Sdk/Wsl/kernel" | sed 's/\\/\\\\/g')"
 ```
 
 Now exit the WSL2 shell and open Powershell as an administrator.
