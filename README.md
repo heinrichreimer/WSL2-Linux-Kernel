@@ -1,4 +1,4 @@
-# linux-wsl2
+# 🖥️ linux-wsl2-ceph
 
 Linux kernel for Microsoft Windows Subsystem for Linux 2 (WSL2).
 Modified for usage with Ceph, NFS 4.1.
